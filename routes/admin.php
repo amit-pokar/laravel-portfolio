@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SocialEngagementController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -39,6 +40,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        Route::resource('social-engagements', SocialEngagementController::class)->except(['show']);
 
         Route::get('verify-email', EmailVerificationPromptController::class)
             ->name('verification.notice');
