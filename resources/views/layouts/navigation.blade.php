@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('admin.profile.edit')" :active="request()->routeIs('admin.profile.*')">
                         {{ __('Profile') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.social-engagements.index')" :active="request()->routeIs('admin.social-engagements.*')">
+                        {{ __('Social') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.profile.edit')" :active="request()->routeIs('admin.profile.*')">
                 {{ __('Profile') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.social-engagements.index')" :active="request()->routeIs('admin.social-engagements.*')">
+                {{ __('Social') }}
             </x-responsive-nav-link>
         </div>
 
